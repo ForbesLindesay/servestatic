@@ -5,7 +5,9 @@
   "main": "index.js",
   "dependencies": {
     "consolidate-build": "~0.0.0",
-    "q": "~0.8.6"
+    "q": "~0.8.6",
+    "request": "~2.10.0",
+    "connect": "~2.4.3"
   },
   "devDependencies": {
     "should": "~1.1.0",

@@ -3,10 +3,10 @@ var app = servestatic('./src');
 
 var select = app.select;
 
-select(/^(.*)\.jade$/g).compile('jade').rename('$1.html').use(function (dir, next) {
-    console.log(dir);
-    //next();
-});
+select(/^(.*)\.md$/).compile('markdown').template('/template.html', 'mustache').rename('$1.html');
+select(/^(.*)\.jade$/).compile('jade').rename('$1.html');
+//select(/\.html/).compile('mustache');
+select(/^\/static\/(.*)/).rename('/$1');
 
-
-app.build('./out').end();
+app.listen(8080);
+//app.build('./out').end();
